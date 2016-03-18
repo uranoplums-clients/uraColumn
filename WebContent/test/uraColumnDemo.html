@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>uraColumn - jQuery N Column layout editer plugin Sample</title>
+<link rel="stylesheet" href="uraColumnDemo.css" />
+</head>
+<body>
+<!-- Sample 1 -->
+<div class="Container Sample1">
+	<h1>- The uraColumn Simple Demos -</h1>
+	<div class="sample">
+		<h2>Sample 1</h2>
+		<p>The most basic samples, Please click on the following four buttons.</p>
+		<div id="target" class="demoTarget source" style="height:38px;width:320px;">
+			<p>#target</p><p>The Base Div</p>
+		</div>
+		<div id="target3" class="demoTarget dummy" style="height:38px;width:320px;">
+			<p>Dummy DIV (not move)</p>
+		</div>
+		<div id="target2" class="demoTarget mover" style="height:38px;width:360px;">
+			<p>#target2</p><p>append to #target</p>
+		</div>
+		<input type="button" id="firstNew" class="normalBtn" value="<< First New" />
+		<input type="button" id="leftTarget2" class="normalBtn" value="< Before #target" />
+		<input type="button" id="removeToDummy" class="normalBtn" value="! remove #target2" />
+		<input type="button" id="rightTarget2" class="normalBtn" value="After #target >" />
+		<input type="button" id="appendNew" class="normalBtn" value="Last New >>" />
+
+	</div>
+</div>
+
+<script src="../lib/jquery-1.10.2.js"></script>
+<script src="../dist/jquery.UraColumn-1.1.js"></script>
+<script src="./uraColumnDemo.js"></script>
+
+</body>
+</html>
