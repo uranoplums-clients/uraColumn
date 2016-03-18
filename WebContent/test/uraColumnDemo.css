@@ -1,0 +1,202 @@
+@CHARSET "UTF-8";
+
+/**
+ * width/ height
+ *************************************************************/
+button,
+input.normalBtn {
+/*	width: 150px;*/
+/*	display: block;*/
+}
+/**
+ * margin/ padding/ borders
+ *************************************************************/
+* html body,
+html body,
+body {
+	margin-top: 0;
+}
+
+div, p {
+	margin: 3px;
+	padding: 0;
+	borber-width: 0;
+	border-style: none;
+}
+
+div.sample {
+	border-width: 1px;
+	border-style: solid;
+	border-radius: 5px;
+	padding: 5px;
+}
+
+h2 {
+	margin-top: 2px;
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
+}
+
+button,
+input.normalBtn {
+	padding-left: 13px;
+	padding-right: 13px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	border-width: 1px;
+	border-style: solid;
+	border-radius: 5px;
+}
+
+.demoTarget {
+	border-width: 1px;
+	border-style: solid;
+}
+.demoTarget2 {
+	border-width: 1px;
+	border-style: solid;
+}
+.demoTarget3 {
+	border-width: 1px;
+	border-style: dotted;
+}
+.demoTarget4 {
+	border-width: 1px;
+	border-style: solid;
+}
+.demoTarget5 {
+	border-width: 1px;
+	border-style: solid;
+}
+/**
+ * font/ text
+ *************************************************************/
+* html body,
+html body,
+body {
+	font-family: "Helvetica Neue", Helvetica, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Meiryo UI", "メイリオ", Meiryo, Osaka, sans-serif;
+	font-size: 82.7%;
+}
+h1 {
+	font-size: 200%;
+}
+code {
+	font-family: Consolas, "Helvetica Neue", Helvetica, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Meiryo UI", "メイリオ", Meiryo, Osaka, sans-serif;
+}
+
+button,
+input.normalBtn {
+	font-size: 120%;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+/**
+ * color
+ *************************************************************/
+* {
+	border-top-color: #ccc;
+	border-left-color: #ccc;
+	border-right-color: #ccc;
+	border-bottom-color: #ccc;
+}
+* html body,
+html body,
+body {
+	color: #306;
+}
+
+code {
+	color: #fff;
+	background-color: #006;
+	border-right-color: #666;
+	border-bottom-color: #666;
+}
+
+div.Container {
+	background-color: #fff;
+}
+
+button,
+input.normalBtn {
+	border-top-color: #ccc;
+	border-left-color: #ccc;
+	border-right-color: #333;
+	border-bottom-color: #333;
+	background-color: #fff;
+	color: #333;
+	box-shadow: 1px 1px 1px #999;
+}
+
+button:hover,
+input.normalBtn:hover,
+button:focus:hover,
+input.normalBtn:focus:hover {
+	border-top-color: #ccc;
+	border-left-color: #ccc;
+	border-right-color: #333;
+	border-bottom-color: #333;
+	background-color: #ccc;
+	color: #000;
+	box-shadow: 1px 1px 1px  #999;
+}
+
+button:active,
+input.normalBtn:active,
+button:visited:active,
+input.normalBtn:visited:active {
+	border-top-color: #333;
+	border-left-color: #333;
+	border-right-color: #ccc;
+	border-bottom-color: #ccc;
+	background-color: #ccc;
+	color: #000;
+	box-shadow: 0px 0px #999;
+}
+
+button:focus,
+input.normalBtn:focus,
+button:visited:focus,
+input.normalBtn:visited:focus {
+	outline: 0;
+	border-top-color: #6cc;
+	border-left-color: #6cc;
+	border-right-color: #033;
+	border-bottom-color: #033;
+	background-color: #9ff;
+	color: #033;
+	box-shadow: 1px 1px 1px #399;
+}
+
+.demoTarget {
+	border-color: #fcc;
+}
+.demoTarget2 {
+	background-color: #ccf;
+}
+.demoTarget3 {
+	background-color: #aac;
+}
+.demoTarget4 {
+	background-color: #99a;
+}
+.demoTarget5 {
+	background-color: #669;
+}
+/**
+ * other
+ *************************************************************/
+* html body,
+html body,
+body {
+	speech-rate:			slow;
+	voice-family:			female;
+	volume:					medium;
+}
+
+
+button,
+input.normalBtn {
+	-webkit-transition: all .3s;
+	transition: all .3s;
+}

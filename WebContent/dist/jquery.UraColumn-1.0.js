@@ -17,19 +17,19 @@
 ;(function($) {
   $.fn.extend({
     /**
-     * this object make 'n Column Layout' with wrap DIV, and append dummy columnあ
+     * this object make 'n Column Layout' with wrap DIV, and append dummy column
      */
     uraColumn: function(options) {
       var cfg = $.extend(true, {
         version: '1.0',
         append: {
           object: null,
-          target: 'after',
+          location: 'after',
           float: 'left',
-          width: 1,
-          padding: 0,
-          margin: 0,
-          text: '',
+          width: null,
+          padding: null,
+          margin: null,
+          text: null,
           idName: null,
           className: 'uraColumn-inner'
         },
@@ -45,12 +45,17 @@
       var selfWidth = null;
       var wrapperOuterWidth = null;
 
+      function getOuterWidth($src) {
+        var width = null;
+        $src.each(function(){
+          width += $(this).outerWidth(true);
+        });
+        return width;
+      }
       function getWrapperOuterWidth($appender) {
         var width = wrapperOuterWidth;
         if (!width) {
-          $appender.each(function(){
-            width += $(this).outerWidth(true);
-          });
+          width = getOuterWidth($appender);
           wrapperOuterWidth = width;
         }
         if (console.debug) {
@@ -62,7 +67,7 @@
       function getSelfWidth($self) {
         var width = selfWidth;
         if (!width) {
-          width = $self.outerWidth(true);
+          width = getOuterWidth($self);
           selfWidth = width;
         }
         if (console.debug) {
@@ -71,17 +76,20 @@
         return width;
       }
 
-      function wrapOuter($self, $appender) {
+      function wrapOuter($self) {
         $self
           .wrap($(document.createElement('div'))
             .attr('id', cfg.outer.idName)
             .addClass(cfg.outer.className)
-            .css('width', getSelfWidth($self) + getWrapperOuterWidth($appender))
+            .css('width', getSelfWidth($self))
             .css('position', 'relative')
             .css('padding', 0)
             .css('margin', 0)
             .css('overflow', 'hidden')
             .css('zoom', 1)
+//            .css('border-width', 1)
+//            .css('border-style', 'dotted')
+//            .css('border-color', 'red')
             .data('uraColumn', 'parent')
           );
       }
@@ -101,18 +109,18 @@
       function appendColumn($self, $appender) {
         var $parent = $self.parent('div');
         var isParent = $parent.data('uraColumn') === 'parent';
-        if (cfg.append.target === 'before') {
+        if (cfg.append.location === 'before') {
           $self.before($appender);
-        } else if (isParent && cfg.append.target === 'first') {
-          $parent.children(':first-child').before($appender);
-        } else if (isParent && cfg.append.target === 'last') {
+        } else if (isParent && cfg.append.location === 'first') {
+          $parent.prepend($appender);
+        } else if (isParent && cfg.append.location === 'last') {
           $parent.append($appender);
         } else {
           $self.after($appender);
         }
       }
 
-      function setSelfCSS($self) {
+      function setFloatStyle($self) {
         var oldFloat = $self.data('uraColumn-Float');
         if (!oldFloat) {
           $self.data('uraColumn-Float', 'none');
@@ -123,29 +131,26 @@
       }
 
       function init($self) {
-        // calculate appenders width
-        if (cfg.append.object) {
-          var $appender = $(cfg.append.object);
-        } else {
-          var $appender = newColumnDiv();
-        }
 
         var $parent = $self.parent('div');
         if ($parent.data('uraColumn') !== 'parent') {
-          // new outer
-          wrapOuter($self, $appender);
-        } else {
-          // add Column
-          $parent.css('width', ('+=' + getWrapperOuterWidth($appender)));
+          // new outer if no parent
+          wrapOuter($self);
+          $parent = $self.parent('div');
         }
+
+        var $appender = $(cfg.append.object || newColumnDiv());
 
         // add column to outer
         appendColumn($self, $appender);
+        // TODO remove column to this outer
+        // calculate appenders width
+        $parent.css('width', getOuterWidth($parent.children()));
 
-        // add css
-        setSelfCSS($self);
+        // set float style.
+        setFloatStyle($self);
         if (cfg.append.object) {
-          setSelfCSS($appender);
+          setFloatStyle($appender);
         }
       }
 

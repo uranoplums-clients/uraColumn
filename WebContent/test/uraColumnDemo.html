@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>uraColumn - jQuery N Column layout editer plugin Sample</title>
+<link rel="stylesheet" href="uraColumnDemo.css" />
+</head>
+<body>
+<div class="Container">
+	<h1>- The uraColumn Simple Demo -</h1>
+	<div class="sample">
+		<h2>Sample 1</h2>
+		<p>The most basic samples, Please click the four following buttons.</p>
+		<div id="target" class="demoTarget source" style="width:320px;background-color:#ddf;">
+			<p>#tgt1</p>
+			<p>The Base Div</p>
+		</div>
+		<div id="target3" class="demoTarget" style="height:32px;width:320px;background-color:orange;">
+			<p>Dummy DIV (not move)</p>
+		</div>
+		<div id="target2" class="demoTarget" style="width:360px;background-color:#dfd;">
+			<p>#Target2 Element</p><p>append to next #tgt1</p>
+		</div>
+		<input type="button" id="firstNew" class="normalBtn" value="<< First New" />
+		<input type="button" id="leftTarget2" class="normalBtn" value="< Before #tgt1" />
+		<input type="button" id="rightTarget2" class="normalBtn" value="After #tgt1 >" />
+		<input type="button" id="appendNew" class="normalBtn" value="Last New >>" />
+	</div>
+</div>
+
+<!-- include source files here... -->
+<script src="../lib/jquery-1.10.2.js"></script>
+<script src="../dist/jquery.UraColumn-1.0.js"></script>
+<script>
+	$(function() {
+		$('#leftTarget2').on('click', function(){
+				$('#target').uraColumn({
+					append: {
+						location: 'before',
+						object: $('#target2')
+					}
+				});
+	    });
+		$('#rightTarget2').on('click', function(){
+			$('#target').uraColumn({
+				append: {
+					//location: 'after',
+					object: $('#target2')
+				}
+			});
+		});
+		var idx = 1;
+		$('#appendNew').on('click', function(){
+		    idx++;
+		    if (idx > 5) {
+		      idx = 2;
+		    }
+			$('#target').uraColumn({
+				append: {
+				  location: 'last',
+				  width: 50,
+				  className: 'demoTarget' + idx,
+				  text: 'Add'
+				}
+			});
+		});
+		var idx2 = 1;
+		$('#firstNew').on('click', function(){
+		    idx2++;
+		    if (idx2 > 5) {
+		      idx2 = 2;
+		    }
+			$('#target').uraColumn({
+				append: {
+				  location: 'first',
+				  width: 50,
+				  className: 'demoTarget' + idx2,
+				  text: 'Add'
+				}
+			});
+		});
+	});
+</script>
+</body>
+</html>
