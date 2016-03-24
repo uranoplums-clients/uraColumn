@@ -9,12 +9,12 @@
 <link rel="stylesheet" href="uraColumnDemo.css" />
 </head>
 <body>
-<!-- Sample 1 -->
-<div class="Container Sample1">
+<div class="Container">
+	<!-- Sample 1 -->
 	<h1>- The uraColumn Simple Demos -</h1>
 	<div class="sample">
 		<h2>Sample 1</h2>
-		<p>The most basic samples, Please click on the following four buttons.</p>
+		<p>The most easily samples, Please click on the following five buttons.</p>
 		<div id="target" class="demoTarget source" style="height:38px;width:320px;">
 			<p>#target</p><p>The Base Div</p>
 		</div>
@@ -29,7 +29,336 @@
 		<input type="button" id="removeToDummy" class="normalBtn" value="! remove #target2" />
 		<input type="button" id="rightTarget2" class="normalBtn" value="After #target >" />
 		<input type="button" id="appendNew" class="normalBtn" value="Last New >>" />
+	</div>
+	<br />
+	<!-- Sample 2 -->
+	<div class="sample">
+		<h2>Sample 2 - Add new columns -</h2>
+		<p>New columns add before, before first, after or after last of target DIV.</p>
+		<div id="target10" class="demoTarget source" style="height:38px;width:320px;">
+			<p>#target10</p><p>The Base Div</p>
+		</div>
+		<input type="button" id="s2First" class="normalBtn" value="<< First New" />
+		<input type="button" id="s2Before" class="normalBtn" value="< Before New" />
+		<input type="button" id="s2After" class="normalBtn" value="After New >" />
+		<input type="button" id="s2Last" class="normalBtn" value="Last New >>" />
+		<input type="button" id="s2Reset" class="normalBtn" value="Reset" />
+		<div>
+			<h3>Codes</h3>
+			<div id="s2Code" style="width:230px;">
+				<h4>First New source</h4>
+				<pre class="src js">var s2Idx1 = 2;
+$('#s2First').on('click',
+  function(){
+  if (s2Idx1 > 5)
+    s2Idx1 = 2;
 
+  $('#target10').uraColumn({
+    append: {
+      location: 'first',
+      width: 80,
+      className: 'demoTarget' +
+        (s2Idx1++) + ' s2New',
+      text: 'First'
+    }
+  });
+});</pre>
+			</div>
+
+			<div class="codeClasses" style="width:230px;">
+				<h4>Before New source</h4>
+				<pre class="src js">var s2Idx2 = 2;
+$('#s2Before').on('click',
+  function(){
+  if (s2Idx2 > 5)
+    s2Idx2 = 2;
+
+  $('#target10').uraColumn({
+    append: {
+      location: 'before',
+      width: 80,
+      className: 'demoTarget' +
+        (s2Idx2++) + ' s2New',
+      text: 'Before'
+    }
+  });
+});</pre>
+			</div>
+
+			<div class="codeClasses" style="width:230px;">
+				<h4>After New source</h4>
+				<pre class="src js">var s2Idx3 = 2;
+$('#s2After').on('click',
+  function(){
+  if (s2Idx3 > 5)
+    s2Idx3 = 2;
+
+  $('#target10').uraColumn({
+    append: {
+      location: 'after',
+      width: 80,
+      className: 'demoTarget' +
+        (s2Idx3++) + ' s2New',
+      text: 'After'
+    }
+  });
+});</pre>
+			</div>
+
+			<div class="codeClasses" style="width:230px;">
+				<h4>Last New source</h4>
+				<pre class="src js">var s2Idx4 = 2;
+$('#s2Last').on('click',
+  function(){
+  if (s2Idx4 > 5)
+    s2Idx4 = 2;
+
+  $('#target10').uraColumn({
+    append: {
+      location: 'last',
+      width: 80,
+      className: 'demoTarget' +
+        (s2Idx4++) + ' s2New',
+      text: 'Last'
+    }
+  });
+});</pre>
+			</div>
+
+			<div class="codeClasses" style="width:230px;">
+				<h4>Reset source</h4>
+				<pre class="src js">$('#s2Reset').on('click',
+  function(){
+  $('#target10').uraColumn({
+    remove: {
+      selector: 'div.s2New'
+    }
+  });
+});</pre>
+			</div>
+		</div>
+	</div>
+	<br />
+	<!-- Sample 3 -->
+	<div class="sample">
+		<h2>Sample 3 - Append the columns -</h2>
+		<p>The target columns add before, before first, after or after last of target DIV.</p>
+		<div id="target20" class="demoTarget source" style="height:38px;width:320px;">
+			<p>#target20</p><p>The Base Div</p>
+		</div>
+		<div>
+		<div id="target21" class="demoTarget3 dummy" style="height:38px;width:120px;">
+			<p>#target21 DIV before it</p>
+		</div>
+		<div id="target22" class="demoTarget4 dummy" style="height:38px;width:120px;">
+			<p>#target22 DIV after it</p>
+		</div>
+		<div id="target23" class="demoTarget5 dummy" style="height:38px;width:120px;">
+			<p>Dummy DIV (not move)</p>
+		</div>
+		<div id="target24" class="demoTarget mover" style="height:38px;width:120px;">
+			<p>#target24 the move around 20.</p>
+		</div>
+		</div>
+		<input type="button" id="s3First" class="normalBtn" value="<< First Obj" />
+		<input type="button" id="s3Before" class="normalBtn" value="< Before Obj" />
+		<input type="button" id="s3After" class="normalBtn" value="After Obj >" />
+		<input type="button" id="s3Last" class="normalBtn" value="Last Obj >>" />
+		<input type="button" id="s3Reset" class="normalBtn" value="Reset" />
+		<div>
+		<h3>Codes</h3>
+			<div id="s3Code" style="width:230px;">
+				<h4>First Object source</h4>
+				<pre class="src js">$('#s3First').on('click',
+  function(){
+  $('#target20').uraColumn({
+    append: {
+      location: 'first',
+      object: $('#target24')
+    }
+  });
+});</pre>
+			</div>
+
+			<div class="codeClasses2" style="width:230px;">
+				<h4>Before Object source</h4>
+				<pre class="src js">$('#s3Before').on('click',
+  function(){
+  $('#target20').uraColumn({
+    append: {
+      location: 'before',
+      object: $('#target24')
+    }
+  });
+});</pre>
+			</div>
+
+			<div class="codeClasses2" style="width:230px;">
+				<h4>After Object source</h4>
+				<pre class="src js">$('#s3After').on('click',
+  function(){
+  $('#target20').uraColumn({
+    append: {
+      location: 'after',
+      object: $('#target24')
+    }
+  });
+});</pre>
+			</div>
+
+			<div class="codeClasses2" style="width:230px;">
+				<h4>Last Object source</h4>
+				<pre class="src js">$('#s3Last').on('click',
+  function(){
+  $('#target20').uraColumn({
+    append: {
+      location: 'last',
+      object: $('#target24')
+    }
+  });
+});</pre>
+			</div>
+
+			<div class="codeClasses2" style="width:230px;">
+				<h4>Reset Object source</h4>
+				<pre class="src js">$('#s3Reset').on('click',
+  function(){
+  $('#target20').uraColumn({
+    remove: {
+      selector: '#target24',
+      location: 'after',
+      to: $('#target23')
+    }
+  });
+});</pre>
+			</div>
+		</div>
+	</div>
+
+	<br />
+	<!-- Sample 4 -->
+	<div class="sample">
+		<h2>Sample 4 - pual append patterns -</h2>
+		<p>New columns and object append.</p>
+		<div id="target30" class="demoTarget source s4Target" style="height:38px;width:320px;">
+			<p>#target30 .s4Target</p><p>The Base first Div</p>
+		</div>
+		<div id="target40" class="demoTarget source s4Target" style="height:38px;width:320px;">
+			<p>#target40 .s4Target</p><p>The Base second Div</p>
+		</div>
+		<div>
+			<div id="target41" class="demoTarget mover s4mover" style="height:38px;width:220px;">
+				<p>#target41 .s4mover the move around #40.</p>
+			</div>
+			<div id="target42" class="demoTarget mover s4mover" style="height:38px;width:220px;">
+				<p>#target42 .s4mover the move around #40.</p>
+			</div>
+			<div id="target43" class="demoTarget dummy" style="height:38px;width:120px;">
+				<p>Dummy DIV (not move)</p>
+			</div>
+		</div>
+		<input type="button" id="s4Before" class="normalBtn" value="< Before Append" />
+		<input type="button" id="s4After" class="normalBtn" value="After New >" />
+		<input type="button" id="s4ResetAppend" class="normalBtn" value="Reset Append" />
+		<input type="button" id="s4ResetAdd" class="normalBtn" value="Reset Add" />
+		<div>
+			<h3>Codes</h3>
+			<div id="s4Code" style="width:230px;">
+				<h4>Before Object source</h4>
+				<pre class="src js">$('#s4Before').on('click',
+  function(){
+  $('div.s4Target').uraColumn({
+    append: {
+      location: 'before',
+      object: $('div.s4mover')
+    }
+  });
+});</pre>
+			</div>
+
+			<div class="codeClasses4" style="width:230px;">
+				<h4>After New source</h4>
+				<pre class="src js">$('#s4After').on('click',
+  function(){
+  $('div.s4Target').uraColumn({
+    append: {
+      location: 'after',
+      width: 80,
+      className: 'demoTarget3' +
+        ' s4New',
+      text: 'Before'
+    }
+  });
+});</pre>
+			</div>
+
+			<div class="codeClasses4" style="width:230px;">
+				<h4>Reset Object source</h4>
+				<pre class="src js">$('#s4ResetAppend').on('click',
+  function(){
+  $('div.s4Target').uraColumn({
+    remove: {
+      selector: 'div.s4mover',
+      location: 'after',
+      to: $('#target43')
+    }
+  });
+});</pre>
+			</div>
+
+			<div class="codeClasses4" style="width:230px;">
+				<h4>Reset New source</h4>
+				<pre class="src js">$('#s4ResetAdd').on('click',
+  function(){
+  $('div.s4Target').uraColumn({
+    remove: {
+      selector: 'div.s4New',
+      location: 'after'
+    }
+  });
+});</pre>
+			</div>
+		</div>
+	</div>
+
+
+	<br />
+	<!-- option 4 -->
+	<div class="sample options">
+		<h2>Options</h2>
+		<div>
+			<pre class="src js">$(selector).uraColumn({ // selector is target to append it.
+    append: { // for append column
+      object: null, // if append target object then setting selector or jQuery object.
+                    // if null this option then make new element.
+      location: 'after', // choose append to.
+      float: 'left', // setting css style float
+      width: null,  // setting css style width
+      padding: null, // setting css style padding
+      margin: null,  // setting css style margin
+      text: null,  // setting css style text
+      idName: null,  // setting css style id
+      className: 'uraColumn-inner'  // setting css style class
+    },
+    remove: {
+      selector: null, // remove target
+      location: 'after', // choose append to, if 'to' setting.
+      to: null // 
+    },
+    outer: {
+      idName: null,
+      className: 'uraColumn-outer'
+    },
+    resize: {
+      sync: true,
+      beforeFunc: function($self, $parent){},
+      afterFunc: function($self, $parent){}
+    },
+    self: {
+      float: 'left'
+    }
+);</pre>
+		</div>
 	</div>
 </div>
 

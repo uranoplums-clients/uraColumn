@@ -34,7 +34,7 @@
 		<mkdir dir="${basedir}/${dist.dir}/min"/>
 		<yuicompressor linebreak="-1" todir="${basedir}/${dist.dir}/min">
 			<fileset dir="${basedir}/${src.dir}">
-				<include name="jquery.UraColumn-1.0.js"/>
+				<include name="jquery.*.js"/>
 				<exclude name="*-min.js"/>
 			</fileset>
 			<mapper type="glob" from="*.js" to="*-min.js"/>
