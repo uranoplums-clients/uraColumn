@@ -8,6 +8,20 @@ input.normalBtn {
 /*	width: 150px;*/
 /*	display: block;*/
 }
+
+/* 全体の大きさ */
+div.download div {
+	width: 640px;
+}
+.pic.pic_x {
+	width: 200px;
+	height: 155px;
+}
+.pic.pic_y {
+	width: 200px;
+	height: 270px;
+}
+
 /**
  * margin/ padding/ borders
  *************************************************************/
@@ -55,6 +69,23 @@ input.normalBtn {
 	border-width: 1px;
 	border-style: solid;
 	border-radius: 5px;
+}
+
+div.Container {
+	margin-left:			auto;
+	margin-right:			auto;
+}
+
+div.download div,
+div.download div input {
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-left:			auto;
+	margin-right:			auto;
+}
+
+.pic {
+	border-radius: 3px;
 }
 
 .demoTarget {
@@ -144,6 +175,11 @@ div.Container {
 	background-color: #fff;
 }
 
+.pic {
+	background-color: #fff;
+	box-shadow: 1px 1px 1px #999;
+}
+
 button,
 input.normalBtn {
 	border-top-color: #ccc;
@@ -220,6 +256,61 @@ input.normalBtn:visited:focus {
 }
 .demoTarget5 {
 	background-color: #99c;
+}
+.pic p {
+	color: #f00;
+}
+
+/**
+ * image
+ *************************************************************/
+.pic.box1 {
+	background-image:url("image/image011.gif");
+	background-position: top left;
+	background-repeat: no-repeat;
+	background-size:200px auto;
+}
+.pic.box2 {
+	background-image:url("image/image012.gif");
+	background-position: top left;
+	background-repeat: no-repeat;
+	background-size:200px auto;
+}
+.pic.box3 {
+	background-image:url("image/image013.gif");
+	background-position: top left;
+	background-repeat: no-repeat;
+	background-size:200px auto;
+}
+.pic.box4 {
+	background-image:url("image/image014.gif");
+	background-position: top left;
+	background-repeat: no-repeat;
+	background-size:200px auto;
+}
+.pic.box5 {
+	background-image:url("image/image015.gif");
+	background-position: top left;
+	background-repeat: no-repeat;
+	background-size:200px auto;
+}
+.pic.box6 {
+ 	background-image:url("image/image016.gif");
+	background-position: top left;
+	background-repeat: no-repeat;
+	background-size:200px auto;
+}
+.pic.box7 {
+	background-image:url("image/image017.gif");
+	background-position: top left;
+	background-repeat: no-repeat;
+	background-size:200px auto;
+}
+.pic.box8 {
+	background-image:url("image/image018.gif");
+	background-position: top left;
+	background-repeat: no-repeat;
+	background-size:200px auto;
 }
 /**
  * other

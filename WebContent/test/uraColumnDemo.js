@@ -21,35 +21,35 @@
         }
       });
     });
-    var idx = 1;
+    var idx = 4;
     $('#appendNew').on('click', function(){
         idx++;
-        if (idx > 5) {
-          idx = 2;
+        if (idx > 8) {
+          idx = 4;
         }
       $('#target').uraColumn({
         append: {
           location: 'last',
-          width: 50,
-          height: 38,
-          className: 'demoTarget' + idx,
-          text: 'Add'
+//          width: 50,
+//          height: 38,
+          className: 'pic pic_x box' + idx,
+          text: ''
         }
       });
     });
-    var idx2 = 1;
+    var idx2 = 3;
     $('#firstNew').on('click', function(){
         idx2++;
-        if (idx2 > 5) {
-          idx2 = 2;
+        if (idx2 > 8) {
+          idx2 = 3;
         }
       $('#target').uraColumn({
         append: {
           location: 'first',
-          width: 50,
-          height: 38,
-          className: 'demoTarget' + idx2,
-          text: 'Add'
+//          width: 50,
+//          height: 38,
+          className: 'pic pic_x box' + idx2,
+          text: ''
         }
       });
     });
@@ -229,6 +229,21 @@
     });
 
 
+    $('#target').uraColumn({
+      append: {
+        location: 'last',
+        className: 'pic pic_x box8',
+        text: ''
+      }
+    });
+
+    $('#target').uraColumn({
+      append: {
+        location: 'first',
+        className: 'pic pic_x box7',
+        text: ''
+      }
+    });
     $('#s2Code').uraColumn({
       append: {
         location: 'after',
@@ -262,6 +277,21 @@
         selector: 'div.s4New',
         location: 'after'
       }
+    });
+    var downloadURL = function downloadURL(url) {
+      window.location = '' + url;
+//      var hiddenIFrameID = '_hiddenDownloader',
+//          iframe = document.getElementById(hiddenIFrameID);
+//      if (iframe === null) {
+//          iframe = document.createElement('iframe');
+//          iframe.id = hiddenIFrameID;
+//          iframe.style.display = 'none';
+//          document.body.appendChild(iframe);
+//      }
+//      iframe.src = url;
+    };
+    $('#dlBtn').on('click', function(){
+      downloadURL('https://github.com/uranoplums-clients/uraColumn/archive/master.zip');
     });
   });
 })(jQuery, window);

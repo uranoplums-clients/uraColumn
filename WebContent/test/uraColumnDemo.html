@@ -9,20 +9,27 @@
 <link rel="stylesheet" href="uraColumnDemo.css" />
 </head>
 <body>
-<div class="Container">
+<div class="Outline Container">
 	<!-- Sample 1 -->
-	<h1>- The uraColumn Simple Demos -</h1>
+	<div class="download">
+		<div>
+			<h1>- The uraColumn Simple Demos -</h1>
+			<p>..... click them</p>
+			<input type="button" id="dlBtn" class="normalBtn" value="UraColumn 1.1 Download" />
+		</div>
+	</div>
+	<br />
+	<br />
 	<div class="sample">
 		<h2>Sample 1</h2>
 		<p>The most easily samples, Please click on the following five buttons.</p>
-		<div id="target" class="demoTarget source" style="height:38px;width:320px;">
-			<p>#target</p><p>The Base Div</p>
+		<div id="target" class="pic pic_x box2">
+			<p>#target</p>
 		</div>
-		<div id="target3" class="demoTarget dummy" style="height:38px;width:320px;">
-			<p>Dummy DIV (not move)</p>
+		<div id="target3" class="pic pic_x box2" style="display:none;">
 		</div>
-		<div id="target2" class="demoTarget mover" style="height:38px;width:360px;">
-			<p>#target2</p><p>append to #target</p>
+		<div id="target2" class="pic pic_x box1">
+			<p>#target2</p>
 		</div>
 		<input type="button" id="firstNew" class="normalBtn" value="<< First New" />
 		<input type="button" id="leftTarget2" class="normalBtn" value="< Before #target" />
@@ -343,7 +350,7 @@ $('#s2Last').on('click',
     remove: {
       selector: null, // remove target
       location: 'after', // choose append to, if 'to' setting.
-      to: null // 
+      to: null //
     },
     outer: {
       idName: null,
@@ -361,7 +368,6 @@ $('#s2Last').on('click',
 		</div>
 	</div>
 </div>
-
 <script src="../lib/jquery-1.10.2.js"></script>
 <script src="../dist/jquery.UraColumn-1.1.js"></script>
 <script src="./uraColumnDemo.js"></script>
